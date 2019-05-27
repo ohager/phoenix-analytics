@@ -35,8 +35,8 @@ import {
 } from "variables/charts.jsx";
 
 import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.jsx";
-import PullRequests from "./widgets/pullRequests/PullRequests";
-import PullRequestsChart from "./widgets/pullRequests/PullRequestsChart";
+import PullRequests from "./widgets/PullRequests/PullRequests";
+import PullRequestsChart from "./widgets/PullRequests/PullRequestsChart";
 
 class DashboardContent extends React.Component {
   state = {

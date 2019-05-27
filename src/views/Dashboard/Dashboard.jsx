@@ -4,15 +4,17 @@ import environment from "createRelayEnvironment";
 import {PULL_REQUESTS_FETCH_COUNT, POLLING_INTERVAL} from "../../constants";
 import DashboardContent from "./DashboardContent";
 import query from "./Dashboard.ql"
+import LoadingIcon from "../../components/LoadingIcon/LoadingIcon";
 
 // eslint-disable-next-line react/prop-types
 const renderQuery = ({ error, props }) => {
   if (error) {
     return <div>{error.message}</div>;
-  } else if (props) {
+  }
+  else if (props) {
     return <DashboardContent {...props} />;
   }
-  return <div>Loading</div>;
+  return <LoadingIcon/>;
 };
 
 const DashboardQuery = () => {
