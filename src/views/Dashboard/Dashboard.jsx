@@ -1,7 +1,7 @@
 import React from "react";
 import { QueryRenderer } from "react-relay";
 import environment from "createRelayEnvironment";
-import {PULL_REQUESTS_FETCH_COUNT, POLLING_INTERVAL} from "../../constants";
+import {PULL_REQUESTS_FETCH_COUNT, POLLING_INTERVAL, ISSUES_FETCH_COUNT} from "../../constants";
 import DashboardContent from "./DashboardContent";
 import query from "./Dashboard.ql"
 import LoadingIcon from "../../components/LoadingIcon/LoadingIcon";
@@ -23,7 +23,8 @@ const DashboardQuery = () => {
       environment={environment}
       query={query}
       variables={{
-        prCount: PULL_REQUESTS_FETCH_COUNT
+        prCount: PULL_REQUESTS_FETCH_COUNT,
+        issueCount: ISSUES_FETCH_COUNT
       }}
       cacheConfig={{
         poll: POLLING_INTERVAL

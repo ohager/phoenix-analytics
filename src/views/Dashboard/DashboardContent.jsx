@@ -26,7 +26,7 @@ import CardIcon from "components/Card/CardIcon.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 
-import { bugs, website, server } from "variables/general.jsx";
+import {bugs, website, server} from "variables/general.jsx";
 
 import {
   dailySalesChart,
@@ -37,20 +37,22 @@ import {
 import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.jsx";
 import PullRequests from "./widgets/PullRequests/PullRequests";
 import PullRequestsChart from "./widgets/PullRequests/PullRequestsChart";
+import Issues from "./widgets/Issues/Issues";
 
 class DashboardContent extends React.Component {
   state = {
     value: 0
   };
   handleChange = (event, value) => {
-    this.setState({ value });
+    this.setState({value});
   };
 
   handleChangeIndex = index => {
-    this.setState({ value: index });
+    this.setState({value: index});
   };
+
   render() {
-    const { classes, repository } = this.props;
+    const {classes, repository} = this.props;
     return (
       <div>
         <GridContainer>
@@ -60,53 +62,21 @@ class DashboardContent extends React.Component {
               pullRequests={repository.pullRequests}
             />
           </GridItem>
-          <GridItem xs={12} sm={6} md={3}>
-            <Card>
-              <CardHeader color="danger" stats icon>
-                <CardIcon color="danger">
-                  <Icon>info_outline</Icon>
-                </CardIcon>
-                <p className={classes.cardCategory}>Fixed Issues</p>
-                <h3 className={classes.cardTitle}>75</h3>
-              </CardHeader>
-              <CardFooter stats>
-                <div className={classes.stats}>
-                  <LocalOffer />
-                  Tracked from Github
-                </div>
-              </CardFooter>
-            </Card>
+          <GridItem xs={12} sm={6} md={6}>
+            <Issues
+              classes={classes}
+              issues={repository.issues}
+            />
           </GridItem>
         </GridContainer>
         <GridContainer>
           <GridItem xs={12} sm={12} md={6}>
             <PullRequestsChart
               classes={classes}
-              pullRequests={repository.pullRequests} />
+              pullRequests={repository.pullRequests}/>
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
-            <Card chart>
-              <CardHeader color="danger">
-                <ChartistGraph
-                  className="ct-chart"
-                  data={completedTasksChart.data}
-                  type="Line"
-                  options={completedTasksChart.options}
-                  listener={completedTasksChart.animation}
-                />
-              </CardHeader>
-              <CardBody>
-                <h4 className={classes.cardTitle}>Completed Tasks</h4>
-                <p className={classes.cardCategory}>
-                  Last Campaign Performance
-                </p>
-              </CardBody>
-              <CardFooter chart>
-                <div className={classes.stats}>
-                  <AccessTime /> campaign sent 2 days ago
-                </div>
-              </CardFooter>
-            </Card>
+           <h2>Todo</h2>
           </GridItem>
         </GridContainer>
         <GridContainer>

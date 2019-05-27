@@ -1,7 +1,7 @@
 import graphql from "babel-plugin-relay/macro";
 
 export default graphql`
-  query DashboardQuery($prCount: Int!) {
+  query DashboardQuery($prCount: Int!, $issueCount: Int!) {
     repository(owner:"burst-apps-team",name:"phoenix") {
       stargazers(last:1){
         totalCount
@@ -19,7 +19,7 @@ export default graphql`
           }
         }
       }
-      issues(last: 100, orderBy: {field: CREATED_AT, direction: ASC}){
+      issues(last: $issueCount, orderBy: {field: CREATED_AT, direction: ASC}, states: [OPEN]){
         totalCount
         nodes{
           number
