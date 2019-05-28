@@ -33,14 +33,8 @@ export default graphql`
         }
       }
       releases(last:100,  orderBy: {field: CREATED_AT, direction: ASC}){
-        totalCount
         nodes{
-          createdAt
-          name
-          tag {
-            id
-            name
-          }
+          tagName
           releaseAssets(last:100){
             nodes{
               downloadCount

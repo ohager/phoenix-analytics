@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash fa60cdcee6b06ddb98dd616be78dd7d0
+ * @relayHash c20107362ffd39278abce9d4e9a111f1
  */
 
 /* eslint-disable */
@@ -45,21 +45,15 @@ export type DashboardQueryResponse = {|
       |}>,
     |},
     +releases: {|
-      +totalCount: number,
       +nodes: ?$ReadOnlyArray<?{|
-        +createdAt: any,
-        +name: ?string,
-        +tag: ?{|
-          +id: string,
-          +name: string,
-        |},
+        +tagName: string,
         +releaseAssets: {|
           +nodes: ?$ReadOnlyArray<?{|
             +downloadCount: number,
             +name: string,
           |}>
         |},
-      |}>,
+      |}>
     |},
   |}
 |};
@@ -113,14 +107,8 @@ query DashboardQuery(
       }
     }
     releases(last: 100, orderBy: {field: CREATED_AT, direction: ASC}) {
-      totalCount
       nodes {
-        createdAt
-        name
-        tag {
-          id
-          name
-        }
+        tagName
         releaseAssets(last: 100) {
           nodes {
             downloadCount
@@ -287,30 +275,24 @@ v16 = [
 v17 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "id",
+  "name": "tagName",
   "args": null,
   "storageKey": null
 },
-v18 = {
-  "kind": "LinkedField",
-  "alias": null,
-  "name": "tag",
-  "storageKey": null,
-  "args": null,
-  "concreteType": "Ref",
-  "plural": false,
-  "selections": [
-    (v17/*: any*/),
-    (v14/*: any*/)
-  ]
-},
-v19 = [
+v18 = [
   (v15/*: any*/)
 ],
-v20 = {
+v19 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "downloadCount",
+  "args": null,
+  "storageKey": null
+},
+v20 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "id",
   "args": null,
   "storageKey": null
 };
@@ -431,7 +413,6 @@ return {
             "concreteType": "ReleaseConnection",
             "plural": false,
             "selections": [
-              (v2/*: any*/),
               {
                 "kind": "LinkedField",
                 "alias": null,
@@ -441,15 +422,13 @@ return {
                 "concreteType": "Release",
                 "plural": true,
                 "selections": [
-                  (v8/*: any*/),
-                  (v14/*: any*/),
-                  (v18/*: any*/),
+                  (v17/*: any*/),
                   {
                     "kind": "LinkedField",
                     "alias": null,
                     "name": "releaseAssets",
                     "storageKey": "releaseAssets(last:100)",
-                    "args": (v19/*: any*/),
+                    "args": (v18/*: any*/),
                     "concreteType": "ReleaseAssetConnection",
                     "plural": false,
                     "selections": [
@@ -462,7 +441,7 @@ return {
                         "concreteType": "ReleaseAsset",
                         "plural": true,
                         "selections": [
-                          (v20/*: any*/),
+                          (v19/*: any*/),
                           (v14/*: any*/)
                         ]
                       }
@@ -532,10 +511,10 @@ return {
                         "storageKey": null
                       },
                       (v11/*: any*/),
-                      (v17/*: any*/)
+                      (v20/*: any*/)
                     ]
                   },
-                  (v17/*: any*/)
+                  (v20/*: any*/)
                 ]
               }
             ]
@@ -581,12 +560,12 @@ return {
                         "plural": true,
                         "selections": [
                           (v14/*: any*/),
-                          (v17/*: any*/)
+                          (v20/*: any*/)
                         ]
                       }
                     ]
                   },
-                  (v17/*: any*/)
+                  (v20/*: any*/)
                 ]
               }
             ]
@@ -600,7 +579,6 @@ return {
             "concreteType": "ReleaseConnection",
             "plural": false,
             "selections": [
-              (v2/*: any*/),
               {
                 "kind": "LinkedField",
                 "alias": null,
@@ -610,15 +588,13 @@ return {
                 "concreteType": "Release",
                 "plural": true,
                 "selections": [
-                  (v8/*: any*/),
-                  (v14/*: any*/),
-                  (v18/*: any*/),
+                  (v17/*: any*/),
                   {
                     "kind": "LinkedField",
                     "alias": null,
                     "name": "releaseAssets",
                     "storageKey": "releaseAssets(last:100)",
-                    "args": (v19/*: any*/),
+                    "args": (v18/*: any*/),
                     "concreteType": "ReleaseAssetConnection",
                     "plural": false,
                     "selections": [
@@ -631,19 +607,19 @@ return {
                         "concreteType": "ReleaseAsset",
                         "plural": true,
                         "selections": [
-                          (v20/*: any*/),
+                          (v19/*: any*/),
                           (v14/*: any*/),
-                          (v17/*: any*/)
+                          (v20/*: any*/)
                         ]
                       }
                     ]
                   },
-                  (v17/*: any*/)
+                  (v20/*: any*/)
                 ]
               }
             ]
           },
-          (v17/*: any*/)
+          (v20/*: any*/)
         ]
       }
     ]
@@ -652,11 +628,11 @@ return {
     "operationKind": "query",
     "name": "DashboardQuery",
     "id": null,
-    "text": "query DashboardQuery(\n  $prCount: Int!\n  $issueCount: Int!\n) {\n  repository(owner: \"burst-apps-team\", name: \"phoenix\") {\n    stargazers(last: 1) {\n      totalCount\n    }\n    pullRequests(last: $prCount, orderBy: {field: CREATED_AT, direction: ASC}) {\n      totalCount\n      nodes {\n        title\n        number\n        createdAt\n        mergedAt\n        closedAt\n        author {\n          __typename\n          login\n          ... on Node {\n            id\n          }\n        }\n        id\n      }\n    }\n    issues(last: $issueCount, orderBy: {field: CREATED_AT, direction: ASC}, states: [OPEN]) {\n      totalCount\n      nodes {\n        number\n        createdAt\n        closedAt\n        labels(first: 10) {\n          nodes {\n            name\n            id\n          }\n        }\n        id\n      }\n    }\n    releases(last: 100, orderBy: {field: CREATED_AT, direction: ASC}) {\n      totalCount\n      nodes {\n        createdAt\n        name\n        tag {\n          id\n          name\n        }\n        releaseAssets(last: 100) {\n          nodes {\n            downloadCount\n            name\n            id\n          }\n        }\n        id\n      }\n    }\n    id\n  }\n}\n",
+    "text": "query DashboardQuery(\n  $prCount: Int!\n  $issueCount: Int!\n) {\n  repository(owner: \"burst-apps-team\", name: \"phoenix\") {\n    stargazers(last: 1) {\n      totalCount\n    }\n    pullRequests(last: $prCount, orderBy: {field: CREATED_AT, direction: ASC}) {\n      totalCount\n      nodes {\n        title\n        number\n        createdAt\n        mergedAt\n        closedAt\n        author {\n          __typename\n          login\n          ... on Node {\n            id\n          }\n        }\n        id\n      }\n    }\n    issues(last: $issueCount, orderBy: {field: CREATED_AT, direction: ASC}, states: [OPEN]) {\n      totalCount\n      nodes {\n        number\n        createdAt\n        closedAt\n        labels(first: 10) {\n          nodes {\n            name\n            id\n          }\n        }\n        id\n      }\n    }\n    releases(last: 100, orderBy: {field: CREATED_AT, direction: ASC}) {\n      nodes {\n        tagName\n        releaseAssets(last: 100) {\n          nodes {\n            downloadCount\n            name\n            id\n          }\n        }\n        id\n      }\n    }\n    id\n  }\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '454561865613fcb8effcb61fd3a9f375';
+(node/*: any*/).hash = '3dad294a104e57321f30b4572a01f40d';
 module.exports = node;
