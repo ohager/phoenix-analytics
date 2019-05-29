@@ -1,6 +1,6 @@
 # Phoenix Analytics 
 
-This project's objevctive is to show more or less relevant metrics for the [Phoenix Project](https://github.com/burst-apps-team/phoenix)
+This project's objective is to show more or less relevant metrics for the [Phoenix Project](https://github.com/burst-apps-team/phoenix)
 
 
 To run you need a valid [Github Access Token](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line) with repo scope.
