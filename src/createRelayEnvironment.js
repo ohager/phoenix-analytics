@@ -9,7 +9,7 @@ import {
 
 function fetchQuery(operation, variables) {
   return Observable.create(sink => {
-    fetch("/api/github", {
+    fetch(`${process.env.REACT_APP_API_URL}/api/github`, {
       method: "POST",
       headers: {
         Accept: "application/json",

@@ -1,0 +1,19 @@
+{
+  "name": "phoenix-analytics-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "deploy": "now"
+  },
+  "author": "ohager",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^0.19.1"
+  },
+  "devDependencies": {
+    "now": "^15.3.0"
+  }
+}
