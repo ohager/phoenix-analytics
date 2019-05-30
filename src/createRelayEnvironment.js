@@ -9,7 +9,7 @@ import {
 
 function fetchQuery(operation, variables) {
   return Observable.create(sink => {
-    fetch("/graphql", {
+    fetch("/api/github", {
       method: "POST",
       headers: {
         Accept: "application/json",

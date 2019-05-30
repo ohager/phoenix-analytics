@@ -1,0 +1,16 @@
+language: node_js
+node_js: "10"
+services:
+  - docker
+install:
+  - yarn
+cache:
+  yarn: true
+  directories:
+    - node_modules
+before_install:
+  - yarn global add now
+script:
+  - docker build --build-arg $GH_TOKEN
+  - now --docker --public --name phoenix-analytics
+
