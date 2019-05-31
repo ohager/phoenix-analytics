@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4610fc8c58034357560c627d3bd0a33e",
+    "revision": "33531459adc4e3bb7b424ef792aa1101",
     "url": "/phoenix-analytics/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/phoenix-analytics/static/css/2.d0176e96.chunk.css"
   },
   {
-    "revision": "a32b1e96a41ce3dd0aed",
+    "revision": "a2a35402b586b708a8c1",
     "url": "/phoenix-analytics/static/css/main.f313c2a0.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/phoenix-analytics/static/js/2.8375c2f7.chunk.js"
   },
   {
-    "revision": "a32b1e96a41ce3dd0aed",
-    "url": "/phoenix-analytics/static/js/main.6d537129.chunk.js"
+    "revision": "a2a35402b586b708a8c1",
+    "url": "/phoenix-analytics/static/js/main.b71b78cd.chunk.js"
   },
   {
     "revision": "c6911ab2b63c51adc210",
