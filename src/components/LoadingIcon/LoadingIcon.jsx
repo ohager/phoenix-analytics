@@ -1,6 +1,6 @@
 import React from "react"
 
-import icon from "assets/img/logo_blue.svg"
+import icon from "assets/img/logo_white.svg"
 import {withStyles} from "@material-ui/core";
 
 const style = {
@@ -8,6 +8,7 @@ const style = {
     display: "flex",
     justifyContent: "center",
     width: "100%",
+    opacity: "0.75"
   },
   icon: {
     width : "80px",

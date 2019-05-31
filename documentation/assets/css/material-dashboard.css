@@ -684,6 +684,8 @@ h2.title {
   height: calc(100vh - 75px);
   overflow: auto;
   width: 260px;
+  color: black;
+  opacity: 0.4;
   z-index: 4;
 }
 

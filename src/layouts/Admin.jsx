@@ -5,7 +5,6 @@ import {Switch, Route, Redirect} from "react-router-dom";
 import PerfectScrollbar from "perfect-scrollbar";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Navbar from "components/Navbars/Navbar.jsx";
-import Footer from "components/Footer/Footer.jsx";
 import Sidebar from "components/Sidebar/Sidebar.jsx";
 import routes from "../routes.js";
 import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx";
@@ -92,7 +91,6 @@ class Dashboard extends React.Component {
           routes={routes}
           logoText={"Phoenix Analytics"}
           logo={logo}
-          image={this.state.image}
           handleDrawerToggle={this.handleDrawerToggle}
           open={this.state.mobileOpen}
           color={this.state.color}
@@ -105,7 +103,7 @@ class Dashboard extends React.Component {
             {...rest}
           />
           <div className={classes.map}>{switchRoutes}</div>
-          <Footer/>
+          {/*<Footer/>*/}
         </div>
       </div>
     );

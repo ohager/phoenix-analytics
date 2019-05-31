@@ -48,7 +48,9 @@ const sidebarStyle = theme => ({
       paddingLeft: "0",
       transform: `translate3d(${drawerWidth}px, 0, 0)`,
       ...transition
-    }
+    },
+    opacity: "0.6",
+    backgroundColor: "#41434a"
   },
   drawerPaperRTL: {
     [theme.breakpoints.up("md")]: {
@@ -287,7 +289,7 @@ const sidebarStyle = theme => ({
     overflow: "auto",
     width: "260px",
     zIndex: "4",
-    overflowScrolling: "touch"
+    overflowScrolling: "touch",
   },
   activePro: {
     [theme.breakpoints.up("md")]: {

@@ -53,11 +53,6 @@ const PullRequestsChart = ({ classes, pullRequests }) => {
         ${averages.avgDuration}h`}</h3>
         </div>
       </CardBody>
-      <CardFooter chart>
-        <div className={classes.stats}>
-          <AccessTime /> Foo Bar
-        </div>
-      </CardFooter>
     </Card>
   );
 };

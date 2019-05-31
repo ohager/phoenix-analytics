@@ -112,7 +112,8 @@ h6 {
 }
 
 body {
-  background-color: #eeeeee;
+  background: url("../img/decentralized_bg.jpg") no-repeat fixed;
+  background-size: cover;
   color: #3c4858;
 }
 
