@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/phoenix-analytics/static/css/main.f313c2a0.chunk.css",
+    "main.js": "/phoenix-analytics/static/js/main.f0c45c2f.chunk.js",
+    "main.js.map": "/phoenix-analytics/static/js/main.f0c45c2f.chunk.js.map",
+    "runtime~main.js": "/phoenix-analytics/static/js/runtime~main.f3414984.js",
+    "runtime~main.js.map": "/phoenix-analytics/static/js/runtime~main.f3414984.js.map",
+    "static/css/2.d0176e96.chunk.css": "/phoenix-analytics/static/css/2.d0176e96.chunk.css",
+    "static/js/2.c2cdb39c.chunk.js": "/phoenix-analytics/static/js/2.c2cdb39c.chunk.js",
+    "static/js/2.c2cdb39c.chunk.js.map": "/phoenix-analytics/static/js/2.c2cdb39c.chunk.js.map",
+    "index.html": "/phoenix-analytics/index.html",
+    "precache-manifest.6ad14f3cbe26932646a11298c39041e3.js": "/phoenix-analytics/precache-manifest.6ad14f3cbe26932646a11298c39041e3.js",
+    "service-worker.js": "/phoenix-analytics/service-worker.js",
+    "static/css/2.d0176e96.chunk.css.map": "/phoenix-analytics/static/css/2.d0176e96.chunk.css.map",
+    "static/css/main.f313c2a0.chunk.css.map": "/phoenix-analytics/static/css/main.f313c2a0.chunk.css.map",
+    "static/media/decentralized.jpg": "/phoenix-analytics/static/media/decentralized.8ee97699.jpg",
+    "static/media/material-dashboard-react.css?v=1.6.0": "/phoenix-analytics/static/media/decentralized_bg.09a5b365.jpg",
+    "static/media/logo_white.svg": "/phoenix-analytics/static/media/logo_white.1cbfdd80.svg",
+    "static/media/phoenix_logo.png": "/phoenix-analytics/static/media/phoenix_logo.ca9f7b1c.png"
+  }
+}
