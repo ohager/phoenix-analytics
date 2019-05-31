@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c34734e81c9143ce80c4f7078ac34899",
+    "revision": "a31dc145bf09e93be6e8f8e0283a2b98",
     "url": "/phoenix-analytics/index.html"
   },
   {
-    "revision": "d943414be24709027331",
+    "revision": "423db918eeab89e3950d",
     "url": "/phoenix-analytics/static/css/2.d0176e96.chunk.css"
   },
   {
-    "revision": "2265743d3f9847534f12",
+    "revision": "436845949f3e0170871a",
     "url": "/phoenix-analytics/static/css/main.f313c2a0.chunk.css"
   },
   {
-    "revision": "d943414be24709027331",
-    "url": "/phoenix-analytics/static/js/2.c2cdb39c.chunk.js"
+    "revision": "423db918eeab89e3950d",
+    "url": "/phoenix-analytics/static/js/2.b242bf44.chunk.js"
   },
   {
-    "revision": "2265743d3f9847534f12",
-    "url": "/phoenix-analytics/static/js/main.f0c45c2f.chunk.js"
+    "revision": "436845949f3e0170871a",
+    "url": "/phoenix-analytics/static/js/main.f7296ef0.chunk.js"
   },
   {
     "revision": "c6911ab2b63c51adc210",
