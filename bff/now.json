@@ -1,14 +1,29 @@
 {
-    "version": 2,
-    "name": "phoenix-analytics-api",
-    "env": {
-        "GH_TOKEN": "@gh_token"
+  "version": 2,
+  "name": "phoenix-analytics-api",
+  "env": {
+    "GH_TOKEN": "@gh_token"
+  },
+  "builds": [
+    {
+      "src": "**/*.js",
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(?<service>[^/]+)",
+      "dest": "/api/$service.js"
     },
-    "builds": [
-        { "src": "**/*.js", "use": "@now/node" }
-    ],
-    "routes": [
-        { "src": "/api/(?<service>[^/]+)", "dest": "/api/$service.js" },
-        { "src": "/(.*)", "dest": "/" }
-    ]
+    {
+      "src": "/api/(?<service>[^/]+)",
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
 }
