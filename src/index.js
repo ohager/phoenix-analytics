@@ -14,7 +14,8 @@ const hist = createHashHistory();
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
-      <Route path="/" component={Admin} />
+      <Route path="/admin" component={Admin} />
+      <Redirect from="/" to="/admin/dashboard" />
     </Switch>
   </Router>,
   document.getElementById("root")
