@@ -39,6 +39,7 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
   },
+  "homepage":"https://ohager.github.io/phoenix-analytics",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ohager/phoenix-analytics.git"
