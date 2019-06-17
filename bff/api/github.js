@@ -13,6 +13,16 @@ const proxyOptions = {
 };
 
 const app = express();
-app.use('*', proxy(proxyOptions));
+
+app.use(express.json());
+
+app.use('*', (req, res) => {
+
+  if(/mutation\W.+?{/gmi.test(req.body.query)){
+    return res.sendStatus(403)
+  }
+
+  return proxy(proxyOptions)(req, res)
+});
 
 module.exports = app;
