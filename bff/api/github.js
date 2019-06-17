@@ -14,8 +14,6 @@ const proxyOptions = {
 
 const app = express();
 
-app.use(express.json());
-
 app.use('*', (req, res) => {
 
   if(/mutation\W.+?{/gmi.test(req.body.query)){
@@ -24,5 +22,6 @@ app.use('*', (req, res) => {
 
   return proxy(proxyOptions)(req, res)
 });
+
 
 module.exports = app;
