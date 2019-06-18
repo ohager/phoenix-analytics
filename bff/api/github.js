@@ -2,8 +2,11 @@ const express = require('express');
 const proxy = require('http-proxy-middleware');
 
 function denyMutations (proxyReq, req, res) {
-  if(req.body.query && /mutation\W.+?{/gmi.test(req.body.query)){
-    res.status(403).end("Mutations are not allowed")
+
+  if(req.method !== 'POST' ) return;
+
+  if(req.body && req.body.query && /mutation\W.+?{/gmi.test(req.body.query)){
+    res.status(403).end('Mutations are not allowed')
   }
 }
 
@@ -17,7 +20,6 @@ const proxyOptions = {
     Authorization: `Bearer ${process.env.GH_TOKEN}`
   },
   onProxyReq: denyMutations
-
 };
 
 const app = express();
