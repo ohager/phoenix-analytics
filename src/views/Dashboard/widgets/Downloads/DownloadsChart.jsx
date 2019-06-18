@@ -1,6 +1,5 @@
 import React from 'react'
 import ChartistGraph from "react-chartist";
-import AccessTime from "@material-ui/core/SvgIcon/SvgIcon";
 import Card from "components/Card/Card.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import CardBody from "components/Card/CardBody.jsx";
@@ -9,9 +8,10 @@ import createDownloadsChartConfig from "./downloadsChartConfig";
 import {getDownloadStats} from "./downloadsUtils";
 import {withStyles} from "@material-ui/core";
 
-const LegendStyle = {
+const LegendStyle = (theme) =>  ({
   root: {
     display: "flex",
+    flexDirection: "row",
     listStyle: "none",
     alignItems: "baseline",
     margin: "0",
@@ -19,9 +19,20 @@ const LegendStyle = {
     height: "100%",
     borderRadius: "2px",
     border: "lightgray 2px solid",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+      alignItems: "center",
+      padding: "0 2px",
+      fontSize: "10px",
+    },
     "& li": {
-      padding: "4px 8px"
-    }
+      padding: "4px 8px",
+      [theme.breakpoints.down("sm")]: {
+        padding: "0 2px",
+        width: "100%",
+        textAlign: "center",
+      },
+    },
   },
   win: {
     backgroundColor: "rgba(255, 255, 255, 0.8)"
@@ -32,7 +43,7 @@ const LegendStyle = {
   macos: {
     backgroundColor: "#f4c63d"
   }
-};
+});
 
 const _ChartLegend = ({classes}) => (
   <ul className={classes.root}>
